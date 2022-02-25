@@ -112,5 +112,102 @@ main section.hero .hero-lt .slider .thumb-img img {
   width: 100%;
   height: 100%;
 }
+main section.hero .hero-rt {
+  padding-left: 7rem;
+  box-sizing: border-box;
+}
+main section.hero .hero-rt h3 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  color: var(--Orange);
+}
+main section.hero .hero-rt h1 {
+  font-size: 2.5rem;
+}
+main section.hero .hero-rt .summary {
+  color: var(--Dark-grayish-blue);
+  line-height: 1.5rem;
+}
+main section.hero .hero-rt #dis-price {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0;
+}
+main section.hero .hero-rt #dis-price::after {
+  content: "50%";
+  color: var(--Orange);
+  font-size: 1rem;
+  vertical-align: center;
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.2rem;
+  background-color: var(--Pale-orange);
+}
+main section.hero .hero-rt #og-price {
+  color: var(--Grayish-blue);
+  text-decoration: line-through;
+  margin-top: 0.5rem;
+}
+main section.hero .hero-rt .cart-btns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+main section.hero .hero-rt .cart-btns .quant-cont {
+  background-color: var(--Light-grayish-blue);
+  border-radius: 0.4rem;
+  display: inline-block;
+}
+main section.hero .hero-rt .cart-btns .quant-cont * {
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  background-color: var(--Light-grayish-blue);
+  margin: 0;
+  padding: 0.6rem 1rem;
+  font-weight: bold;
+  color: var(--Orange);
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+main section.hero .hero-rt .cart-btns .quant-cont #quant {
+  font-size: 1.1rem;
+  color: #000;
+  cursor: default;
+}
+main section.hero .hero-rt .cart-btns #add-cart {
+  outline: none;
+  border: none;
+  background-color: var(--Orange);
+  color: #fff;
+  padding: 0.8rem 4rem;
+  font-weight: bold;
+  font-family: inherit;
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+main section.hero .hero-rt .cart-btns #add-cart:hover {
+  opacity: 0.7;
+}
+main section.hero .hero-rt .cart-btns #add-cart img {
+  height: 0.8rem;
+  margin-right: 0.8rem;
+}
+main section.hero .hero-rt .cart-btns #add-cart .shadow-box {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background-color: var(--Orange);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 10px 40px rgba(255, 125, 26, 0.4);
+  z-index: -1;
+}
 
 /*# sourceMappingURL=main.css.map */

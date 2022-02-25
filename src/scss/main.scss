@@ -152,5 +152,119 @@ main{
                 }
             }
         }
+
+        .hero-rt{
+            padding-left: 7rem;
+            box-sizing: border-box;
+            h3{
+                text-transform: uppercase;
+                font-size: 1rem;
+                letter-spacing: .1rem;
+                color: var(--Orange);
+            }
+
+            h1{
+                font-size: 2.5rem;
+            }
+            
+            .summary{
+                color: var(--Dark-grayish-blue);
+                line-height: 1.5rem;
+            }
+
+            #dis-price{
+                font-size: 2rem;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap:1rem;
+                margin-bottom: 0;
+
+                &::after{
+                    content: '50%';
+                    color: var(--Orange);
+                    font-size: 1rem;
+                    vertical-align: center;
+                    padding: .1rem .5rem;
+                    border-radius: .2rem;
+                    background-color: var(--Pale-orange);
+                }
+            }
+
+            #og-price{
+                color: var(--Grayish-blue);
+                text-decoration: line-through;
+                margin-top: .5rem;
+            }
+
+            .cart-btns{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .quant-cont{
+                    background-color: var(--Light-grayish-blue);
+                    border-radius: .4rem;
+                    display: inline-block;
+                    
+                    & *{
+                        font-size: 1.2rem;
+                        outline: none;
+                        border: none;
+                        background-color: var(--Light-grayish-blue);
+                        margin: 0;
+                        padding: .6rem 1rem;
+                        font-weight: bold;
+                        color: var(--Orange);
+                        border-radius: .4rem;
+                        cursor: pointer;
+                    }
+
+                    #quant{
+                        font-size: 1.1rem;
+                        color: #000;
+                        cursor: default;
+                    }
+                }
+
+                #add-cart{
+                    outline: none;
+                    border: none;
+                    background-color: var(--Orange);                    
+                    color: #fff;
+                    padding: .8rem 4rem;
+                    font-weight: bold;
+                    font-family: inherit;
+                    border-radius: .4rem;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+
+                    &:hover{
+                        opacity: .7;
+                    }
+
+                    img{
+                        height: .8rem;
+                        margin-right: .8rem;
+                    }
+
+                    .shadow-box{
+                        position: absolute;
+                        width: 80%;
+                        height: 80%;
+                        background-color: var(--Orange);
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%,-50%);
+                        box-shadow: 0px 10px 40px hsla(26, 100%, 55%, .4);
+                        z-index: -1;
+                        
+                    }
+
+                }
+                
+            }
+        }
     }
 }
