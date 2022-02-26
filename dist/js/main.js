@@ -1,21 +1,44 @@
 // Home Slider
 const sliderEl = document.getElementsByClassName('thumb-img');
 
-for(let i = 0; i < sliderEl.length; i++){
-    sliderEl[i].onclick = ()=>{
-        if(!sliderEl[i].classList.contains('active')){
-            sliderEl[i].classList.add('active');
-            document.getElementById('main-img').setAttribute('src',`dist/images/image-product-${i+1}.jpg`)
+// for(let i = 0; i < sliderEl.length; i++){
+//     sliderEl[i].onclick = ()=>{
+//         if(!sliderEl[i].classList.contains('active')){
+//             sliderEl[i].classList.add('active');
+//             document.getElementById('main-img').setAttribute('src',`dist/images/image-product-${i+1}.jpg`)
 
 
-            for(let j = 0; j < sliderEl.length; j++){
-                if(sliderEl[j].classList.contains('active') && sliderEl[j] !== sliderEl[i]){
-                    sliderEl[j].classList.remove('active');
-                }
-            }
-        }
+//             for(let j = 0; j < sliderEl.length; j++){
+//                 if(sliderEl[j].classList.contains('active') && sliderEl[j] !== sliderEl[i]){
+//                     sliderEl[j].classList.remove('active');
+//                 }
+//             }
+//         }
+//     }
+// };
+
+const sliderChange = (e) =>{
+    e.target.classList.add('active');
+
+    const targetSiblings = e.target.parentNode.children;
+    let targetSiblingsArr = Array.from(targetSiblings);
+    let targetIndex = targetSiblingsArr.indexOf(e.target);
+    e.target.parentElement.previousSibling.previousSibling.children[0].setAttribute('src',`dist/images/image-product-${targetIndex + 1}.jpg`);
+
+    for(let i = 0; i < targetSiblings.length; i++){
+        if(targetSiblings[i].classList.contains('active') && targetSiblings[i] !==  e.target){
+            targetSiblings[i].classList.remove('active')
+        }        
     }
-};
+}
+
+document.getElementById('main-img').onclick = ()=>{
+    document.getElementById('lbx').classList.add('active');
+}
+
+document.getElementById('close-lbx').onclick = ()=>{
+    document.getElementById('lbx').classList.remove('active');
+}
 
 
 // Add to Cart Buttons

@@ -183,55 +183,67 @@ main section.hero {
   align-items: center;
   padding: 6rem 4rem;
 }
-main section.hero .hero-lt .display-img {
+main .hero-lt .display-img {
   border-radius: 1rem;
   overflow: hidden;
   margin-bottom: 2rem;
 }
-main section.hero .hero-lt .display-img img {
+main .hero-lt .display-img img {
   width: 100%;
 }
-main section.hero .hero-lt .slider {
+main .hero-lt .slider {
   display: flex;
   width: 100%;
   gap: 2rem;
 }
-main section.hero .hero-lt .slider .thumb-img {
+main .hero-lt .slider .thumb-img {
   border-radius: 0.5rem;
   overflow: hidden;
+  position: relative;
 }
-main section.hero .hero-lt .slider .thumb-img.active {
-  outline: 2.5px solid var(--Orange);
+main .hero-lt .slider .thumb-img.active img, main .hero-lt .slider .thumb-img:hover img {
+  opacity: 1;
 }
-main section.hero .hero-lt .slider .thumb-img.active img {
-  opacity: 0.3;
+main .hero-lt .slider .thumb-img.active::after, main .hero-lt .slider .thumb-img:hover::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  left: 0;
 }
-main section.hero .hero-lt .slider .thumb-img:hover img {
-  opacity: 0.5;
+main .hero-lt .slider .thumb-img.active {
+  outline: 2px solid var(--Orange);
 }
-main section.hero .hero-lt .slider .thumb-img img {
+main .hero-lt .slider .thumb-img.active::after {
+  background-color: rgba(255, 255, 255, 0.501);
+}
+main .hero-lt .slider .thumb-img:hover::after {
+  background-color: rgba(255, 255, 255, 0.344);
+}
+main .hero-lt .slider .thumb-img img {
   width: 100%;
   height: 100%;
 }
-main section.hero .hero-rt {
+main .hero-rt {
   padding-left: 7rem;
   box-sizing: border-box;
 }
-main section.hero .hero-rt h3 {
+main .hero-rt h3 {
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: 0.1rem;
   color: var(--Orange);
 }
-main section.hero .hero-rt h1 {
+main .hero-rt h1 {
   font-size: 2.5rem;
   margin-top: 0.5rem;
 }
-main section.hero .hero-rt .summary {
+main .hero-rt .summary {
   color: var(--Dark-grayish-blue);
   line-height: 1.5rem;
 }
-main section.hero .hero-rt #dis-price {
+main .hero-rt #dis-price {
   font-size: 2rem;
   font-weight: bold;
   display: flex;
@@ -239,7 +251,7 @@ main section.hero .hero-rt #dis-price {
   gap: 1rem;
   margin-bottom: 0;
 }
-main section.hero .hero-rt #dis-price::after {
+main .hero-rt #dis-price::after {
   content: "50%";
   color: var(--Orange);
   font-size: 1rem;
@@ -248,22 +260,22 @@ main section.hero .hero-rt #dis-price::after {
   border-radius: 0.2rem;
   background-color: var(--Pale-orange);
 }
-main section.hero .hero-rt #og-price {
+main .hero-rt #og-price {
   color: var(--Grayish-blue);
   text-decoration: line-through;
   margin-top: 0.5rem;
 }
-main section.hero .hero-rt .cart-btns {
+main .hero-rt .cart-btns {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-main section.hero .hero-rt .cart-btns .quant-cont {
+main .hero-rt .cart-btns .quant-cont {
   background-color: var(--Light-grayish-blue);
   border-radius: 0.4rem;
   display: inline-block;
 }
-main section.hero .hero-rt .cart-btns .quant-cont * {
+main .hero-rt .cart-btns .quant-cont * {
   font-size: 1.2rem;
   outline: none;
   border: none;
@@ -275,12 +287,12 @@ main section.hero .hero-rt .cart-btns .quant-cont * {
   border-radius: 0.4rem;
   cursor: pointer;
 }
-main section.hero .hero-rt .cart-btns .quant-cont #quant {
+main .hero-rt .cart-btns .quant-cont #quant {
   font-size: 1.1rem;
   color: #000;
   cursor: default;
 }
-main section.hero .hero-rt .cart-btns #add-cart {
+main .hero-rt .cart-btns #add-cart {
   outline: none;
   border: none;
   background-color: var(--Orange);
@@ -293,14 +305,14 @@ main section.hero .hero-rt .cart-btns #add-cart {
   align-items: center;
   position: relative;
 }
-main section.hero .hero-rt .cart-btns #add-cart:hover {
+main .hero-rt .cart-btns #add-cart:hover {
   opacity: 0.7;
 }
-main section.hero .hero-rt .cart-btns #add-cart img {
+main .hero-rt .cart-btns #add-cart img {
   height: 0.8rem;
   margin-right: 0.8rem;
 }
-main section.hero .hero-rt .cart-btns #add-cart .shadow-box {
+main .hero-rt .cart-btns #add-cart .shadow-box {
   position: absolute;
   width: 80%;
   height: 80%;
@@ -310,6 +322,39 @@ main section.hero .hero-rt .cart-btns #add-cart .shadow-box {
   transform: translate(-50%, -50%);
   box-shadow: 0px 10px 40px rgba(255, 125, 26, 0.4);
   z-index: -1;
+}
+main section.lightbox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+main section.lightbox.active {
+  display: flex;
+}
+main section.lightbox .hero-lt {
+  width: 40%;
+  position: relative;
+}
+main section.lightbox .hero-lt svg {
+  position: absolute;
+  right: 0;
+  top: -2rem;
+}
+main section.lightbox .hero-lt svg path {
+  fill: #fff;
+}
+main section.lightbox .hero-lt svg path:hover {
+  fill: var(--Orange);
+}
+main section.lightbox .hero-lt .slider {
+  width: 80%;
+  margin: auto;
 }
 
 /*# sourceMappingURL=main.css.map */
