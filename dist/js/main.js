@@ -1,22 +1,4 @@
-// Home Slider
-const sliderEl = document.getElementsByClassName('thumb-img');
-
-// for(let i = 0; i < sliderEl.length; i++){
-//     sliderEl[i].onclick = ()=>{
-//         if(!sliderEl[i].classList.contains('active')){
-//             sliderEl[i].classList.add('active');
-//             document.getElementById('main-img').setAttribute('src',`dist/images/image-product-${i+1}.jpg`)
-
-
-//             for(let j = 0; j < sliderEl.length; j++){
-//                 if(sliderEl[j].classList.contains('active') && sliderEl[j] !== sliderEl[i]){
-//                     sliderEl[j].classList.remove('active');
-//                 }
-//             }
-//         }
-//     }
-// };
-
+// Slider
 const sliderChange = (e) =>{
     e.target.classList.add('active');
 
@@ -32,8 +14,34 @@ const sliderChange = (e) =>{
     }
 }
 
-document.getElementById('main-img').onclick = ()=>{
-    document.getElementById('lbx').classList.add('active');
+document.getElementById('main-img').onclick = (e)=>{
+    const lbx = document.getElementById('lbx');
+    lbx.classList.add('active');
+    const updateImgSrc = e.target.getAttribute('src');
+    document.getElementById('main-img-lbx').setAttribute('src', updateImgSrc);
+    const lbxSlider = Array.from(Array.from(lbx.children)[0].children)[2].children;
+    for(let i = 0; i < lbxSlider.length; i++){
+        if(lbxSlider[i].classList.contains('active')){
+            lbxSlider[i].classList.remove('active')
+        }
+        lbxSlider[updateImgSrc[updateImgSrc.length - 5] - 1].classList.add('active')      
+    }
+}
+
+const arrFunPrv = (e)=>{
+    let mainLbxImg = document.getElementById('main-img-lbx').getAttribute('src');
+    let mainLbxImgIndex = Number(mainLbxImg[mainLbxImg.length - 5]);
+    if(mainLbxImgIndex >= 2){
+        document.getElementById(`lbx-th-${mainLbxImgIndex - 1}`).click();
+    }
+}
+
+const arrFunNxt = (e)=>{
+    let mainLbxImg = document.getElementById('main-img-lbx').getAttribute('src');
+    let mainLbxImgIndex = Number(mainLbxImg[mainLbxImg.length - 5]);
+    if(mainLbxImgIndex <= 3){
+        document.getElementById(`lbx-th-${mainLbxImgIndex + 1}`).click();
+    }
 }
 
 document.getElementById('close-lbx').onclick = ()=>{
