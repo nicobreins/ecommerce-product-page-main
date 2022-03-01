@@ -34,11 +34,11 @@ header nav {
   display: flex;
   justify-content: space-between;
   position: relative;
-  z-index: 99;
 }
 @media (max-width: 480px) {
   header nav {
     padding: 1.2rem 0rem;
+    z-index: 98;
   }
 }
 header nav .nav-lt {

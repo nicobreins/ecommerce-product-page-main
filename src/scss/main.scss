@@ -44,10 +44,10 @@ header{
         display: flex;
         justify-content: space-between;
         position: relative;
-        z-index: 99;
 
         @include mq(480px){
             padding: 1.2rem 0rem;
+            z-index: 98;
         }
 
         .nav-lt{
@@ -214,6 +214,7 @@ header{
             border-radius: .4rem;
             right: -4rem;
             display: none;
+            
 
             @include mq(480px){
                 right: inherit;
