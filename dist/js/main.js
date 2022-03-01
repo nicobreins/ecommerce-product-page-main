@@ -44,6 +44,22 @@ const arrFunNxt = (e)=>{
     }
 }
 
+const arrFunNxtAno = (e, id)=>{
+    const mainImgEl = document.getElementById(id);
+    const mainImgElIndex = Number(mainImgEl.getAttribute('src')[mainImgEl.getAttribute('src').length - 5]);
+    if(mainImgElIndex <= 3){
+        mainImgEl.setAttribute('src', `dist/images/image-product-${mainImgElIndex + 1}.jpg`)
+    }
+}
+
+const arrFunPrvAno = (e, id)=>{
+    const mainImgEl = document.getElementById(id);
+    const mainImgElIndex = Number(mainImgEl.getAttribute('src')[mainImgEl.getAttribute('src').length - 5]);
+    if(mainImgElIndex >= 2){
+        mainImgEl.setAttribute('src', `dist/images/image-product-${mainImgElIndex - 1}.jpg`)
+    }
+}
+
 document.getElementById('close-lbx').onclick = ()=>{
     document.getElementById('lbx').classList.remove('active');
 }
@@ -126,4 +142,16 @@ addCartBtnEl.onclick = ()=>{
 
 remCartBtnEl.onclick = ()=>{
     remfromCart();
+}
+
+
+
+// menu
+
+document.getElementById('menu-btn').onclick = ()=>{
+    document.getElementById('links').classList.add('active');
+}
+
+document.getElementById('nav-close').onclick = ()=>{
+    document.getElementById('links').classList.remove('active');
 }
