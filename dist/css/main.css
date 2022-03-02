@@ -125,6 +125,11 @@ header nav .nav-lt ul a:hover {
 header nav .nav-lt ul a:hover::after {
   display: inline-block;
 }
+@media (max-width: 480px) {
+  header nav .nav-lt ul a:hover::after {
+    display: none;
+  }
+}
 header nav .nav-rt {
   display: flex;
   align-items: center;

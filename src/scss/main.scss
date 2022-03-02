@@ -139,6 +139,10 @@ header{
     
                         &::after{
                             display: inline-block;
+                            
+                            @include mq(480px){
+                                display: none;
+                            }
                         }
                     }
                 }
